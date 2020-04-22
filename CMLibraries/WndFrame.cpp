@@ -34,15 +34,13 @@ size_t CWndFrame::GetClassPtrHash() const
 }
 
 
-LRESULT CWndFrame::HandleMessage(UINT message, WPARAM wParam, LPARAM lParam)
+MESSAGE_MAP_BEGIN(CWndFrame)
+	MSG_CALL(WM_DESTROY, OnDestroy)
+MESSAGE_MAP_END()
+
+
+MSG_IMPL(CWndFrame, OnDestroy)
 {
-	switch (message)
-	{
-	case WM_DESTROY:
-		::PostQuitMessage(0);
-		break;
-	default:
-		return ::DefWindowProc(m_hWnd, message, wParam, lParam);
-	}
+	PostQuitMessage(0);
 	return 0;
 }

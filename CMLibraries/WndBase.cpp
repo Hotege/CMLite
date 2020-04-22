@@ -73,15 +73,13 @@ LRESULT CALLBACK CWndBase::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARA
 }
 
 
-LRESULT CWndBase::HandleMessage(UINT message, WPARAM wParam, LPARAM lParam)
+MESSAGE_MAP_BEGIN(CWndBase)
+	MSG_CALL(WM_DESTROY, OnDestroy)
+MESSAGE_MAP_END()
+
+
+MSG_IMPL(CWndBase, OnDestroy)
 {
-	switch (message)
-	{
-	case WM_DESTROY:
-		::PostQuitMessage(0);
-		break;
-	default:
-		return ::DefWindowProc(m_hWnd, message, wParam, lParam);
-	}
+	PostQuitMessage(0);
 	return 0;
 }

@@ -18,5 +18,7 @@ public:
 protected:
 	static const unsigned int FRAME_DEFAULT_WIDTH = 320;
 	static const unsigned int FRAME_DEFAULT_HEIGHT = 200;
+
 	virtual LRESULT HandleMessage(UINT message, WPARAM wParam, LPARAM lParam);
+	MSG_DECL(OnDestroy);
 };
