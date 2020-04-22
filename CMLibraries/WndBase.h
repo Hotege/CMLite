@@ -22,7 +22,7 @@ LRESULT control::HandleMessage(UINT message, WPARAM wParam, LPARAM lParam) \
 
 #define MSG_CALL(msg, f) \
 	case msg: \
-		f(message, wParam, lParam);
+		return f(message, wParam, lParam);
 
 #define MESSAGE_MAP_END() \
 	default: \
