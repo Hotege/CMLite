@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CMLite", "CMLite\CMLite.vcxproj", "{C51C5B87-70A8-4ACB-83F7-C215632FA4B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{00D8C133-652A-4C49-8FA4-0DB844B28926} = {00D8C133-652A-4C49-8FA4-0DB844B28926}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CMLibraries", "CMLibraries\CMLibraries.vcxproj", "{00D8C133-652A-4C49-8FA4-0DB844B28926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C51C5B87-70A8-4ACB-83F7-C215632FA4B3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C51C5B87-70A8-4ACB-83F7-C215632FA4B3}.Debug|Win32.Build.0 = Debug|Win32
+		{C51C5B87-70A8-4ACB-83F7-C215632FA4B3}.Release|Win32.ActiveCfg = Release|Win32
+		{C51C5B87-70A8-4ACB-83F7-C215632FA4B3}.Release|Win32.Build.0 = Release|Win32
+		{00D8C133-652A-4C49-8FA4-0DB844B28926}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00D8C133-652A-4C49-8FA4-0DB844B28926}.Debug|Win32.Build.0 = Debug|Win32
+		{00D8C133-652A-4C49-8FA4-0DB844B28926}.Release|Win32.ActiveCfg = Release|Win32
+		{00D8C133-652A-4C49-8FA4-0DB844B28926}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

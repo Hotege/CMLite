@@ -1,0 +1,11 @@
+Debug/
+Release/
+*.sdf
+*.opensdf
+*.suo
+CMLibraries/Debug
+CMLibraries/Release
+CMLibraries/*.user
+CMLite/Debug
+CMLite/Release
+CMLite/*.user
