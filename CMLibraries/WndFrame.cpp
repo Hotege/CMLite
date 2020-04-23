@@ -19,12 +19,15 @@ CWndFrame::CWndFrame()
 	};
 	::RegisterClassEx(&wcex);
 	m_hWnd = ::CreateWindowEx(WS_EX_APPWINDOW, GetClassPtrWndClass(), m_pTitle, WS_POPUP,
-		CW_USEDEFAULT, CW_USEDEFAULT, FRAME_DEFAULT_WIDTH, FRAME_DEFAULT_HEIGHT, nullptr, nullptr, ::GetModuleHandle(nullptr), this);
+		CW_USEDEFAULT, CW_USEDEFAULT, FRAME_DEFAULT_WIDTH, FRAME_DEFAULT_HEIGHT,
+		nullptr, nullptr, ::GetModuleHandle(nullptr), this);
+	m_pSysMenu = new CWndSysMenu(this);
 }
 
 
 CWndFrame::~CWndFrame()
 {
+	delete m_pSysMenu; m_pSysMenu = nullptr;
 }
 
 
