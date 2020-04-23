@@ -74,12 +74,4 @@ LRESULT CALLBACK CWndBase::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARA
 
 
 MESSAGE_MAP_BEGIN(CWndBase)
-	MSG_CALL(WM_DESTROY, OnDestroy)
 MESSAGE_MAP_END()
-
-
-MSG_IMPL(CWndBase, OnDestroy)
-{
-	PostQuitMessage(0);
-	return 0;
-}

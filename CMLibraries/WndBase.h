@@ -52,8 +52,8 @@ protected:
 
 	HWND m_hWnd;
 	TCHAR m_pTitle[TITLE_SIZE];
+	CWndBase *m_pParent;
 
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	virtual LRESULT HandleMessage(UINT message, WPARAM wParam, LPARAM lParam);
-	MSG_DECL(OnDestroy);
 };
