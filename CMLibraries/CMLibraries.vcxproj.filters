@@ -15,12 +15,18 @@
     <ClInclude Include="WndFrame.h">
       <Filter>Objects\Controls</Filter>
     </ClInclude>
+    <ClInclude Include="WndSysMenu.h">
+      <Filter>Objects\Controls</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WndBase.cpp">
       <Filter>Objects\Controls</Filter>
     </ClCompile>
     <ClCompile Include="WndFrame.cpp">
+      <Filter>Objects\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="WndSysMenu.cpp">
       <Filter>Objects\Controls</Filter>
     </ClCompile>
   </ItemGroup>

@@ -70,10 +70,12 @@
   <ItemGroup>
     <ClInclude Include="WndBase.h" />
     <ClInclude Include="WndFrame.h" />
+    <ClInclude Include="WndSysMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WndBase.cpp" />
     <ClCompile Include="WndFrame.cpp" />
+    <ClCompile Include="WndSysMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CMLibraries.def" />
