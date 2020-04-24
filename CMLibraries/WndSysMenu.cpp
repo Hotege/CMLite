@@ -7,7 +7,7 @@ CWndSysMenu::CWndSysMenu(CWndBase *pParent)
 	memset(m_pTitle, 0, sizeof(TCHAR) * TITLE_SIZE);
 	::UnregisterClass(GetClassPtrWndClass(), ::GetModuleHandle(nullptr));
 	WNDCLASSEX wcex = {
-		sizeof(WNDCLASSEX), CS_HREDRAW | CS_VREDRAW,
+		sizeof(WNDCLASSEX), CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS,
 		WndProc, 0, 0,
 		::GetModuleHandle(nullptr),
 		nullptr,
@@ -40,6 +40,7 @@ MESSAGE_MAP_BEGIN(CWndSysMenu)
 	MSG_CALL(WM_PAINT, OnPaint)
 	MSG_CALL(WM_MOUSEMOVE, OnMouseMove);
 	MSG_CALL(WM_LBUTTONDOWN, OnLButtonDown);
+	MSG_CALL(WM_LBUTTONDBLCLK, OnLButtonDbClk);
 MESSAGE_MAP_END()
 
 
@@ -108,5 +109,15 @@ MSG_IMPL(CWndSysMenu, OnLButtonDown)
 	unsigned int nScreenWidth = ::GetSystemMetrics(SM_CXSCREEN);
 	if (rtParent.left + SYSMENU_DEFAULT_WIDTH > nScreenWidth)
 		::SetWindowPos(m_pParent->GetHWND(), 0, nScreenWidth - SYSMENU_DEFAULT_WIDTH, rtParent.top, 0, 0, SWP_NOZORDER | SWP_NOSIZE);
+	return 0;
+}
+
+
+MSG_IMPL(CWndSysMenu, OnLButtonDbClk)
+{
+	if (IsZoomed(m_pParent->GetHWND()))
+		SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_RESTORE, 0);
+	else
+		SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_MAXIMIZE, 0);
 	return 0;
 }

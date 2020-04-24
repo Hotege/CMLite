@@ -18,4 +18,5 @@ protected:
 	MSG_DECL(OnPaint);
 	MSG_DECL(OnMouseMove);
 	MSG_DECL(OnLButtonDown);
+	MSG_DECL(OnLButtonDbClk);
 };
