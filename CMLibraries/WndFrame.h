@@ -15,7 +15,7 @@ protected:
 	static const unsigned int FRAME_DEFAULT_HEIGHT = 600;
 	static const int FRAME_BORDER_SIZE = 8;
 
-	CWndSysMenu *m_pSysMenu;
+	CWndSysMenu *m_pSysMenu = nullptr;
 
 	virtual LRESULT HandleMessage(UINT message, WPARAM wParam, LPARAM lParam);
 	MSG_DECL(OnDestroy);

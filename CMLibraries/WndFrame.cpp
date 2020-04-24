@@ -127,9 +127,12 @@ MSG_IMPL(CWndFrame, OnLButtonDown)
 
 MSG_IMPL(CWndFrame, OnSize)
 {
-	RECT rtThis, rtSysMenu;
-	::GetWindowRect(m_hWnd, &rtThis);
-	::GetWindowRect(m_pSysMenu->GetHWND(), &rtSysMenu);
-	::SetWindowPos(m_pSysMenu->GetHWND(), 0, 0, 0, rtSysMenu.right - rtSysMenu.left, rtThis.bottom - rtThis.top, SWP_NOZORDER | SWP_NOMOVE);
+	if (m_hWnd && m_pSysMenu)
+	{
+		RECT rtThis, rtSysMenu;
+		::GetWindowRect(m_hWnd, &rtThis);
+		::GetWindowRect(m_pSysMenu->GetHWND(), &rtSysMenu);
+		::SetWindowPos(m_pSysMenu->GetHWND(), 0, 0, 0, rtSysMenu.right - rtSysMenu.left, rtThis.bottom - rtThis.top, SWP_NOZORDER | SWP_NOMOVE);
+	}
 	return 0;
 }
