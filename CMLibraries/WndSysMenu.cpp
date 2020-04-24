@@ -116,8 +116,8 @@ MSG_IMPL(CWndSysMenu, OnLButtonDown)
 MSG_IMPL(CWndSysMenu, OnLButtonDbClk)
 {
 	if (IsZoomed(m_pParent->GetHWND()))
-		SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_RESTORE, 0);
+		::SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_RESTORE, 0);
 	else
-		SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_MAXIMIZE, 0);
+		::SendMessage(m_pParent->GetHWND(), WM_SYSCOMMAND, SC_MAXIMIZE, 0);
 	return 0;
 }
